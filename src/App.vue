@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import PWABadge from './components/PWABadge.vue'
 </script>
 
@@ -12,7 +11,13 @@ import PWABadge from './components/PWABadge.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="cfp_crunch" />
+  <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+    <RouterLink to="/back">Go Back</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
   <PWABadge />
 </template>
 
@@ -28,5 +33,19 @@ import PWABadge from './components/PWABadge.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+nav, main {
+  border: 2px solid #000;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+nav > a + a {
+  margin-left: 10px;
+}
+
+h2 {
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 20px;
 }
 </style>
